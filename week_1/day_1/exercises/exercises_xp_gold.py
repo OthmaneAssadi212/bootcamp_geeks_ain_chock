@@ -7,7 +7,7 @@ summer = {6,7,8}
 fall = {9,10,11}
 winter = {12,1,2}
 
-user_month = int(input("Enter a month (1-12): "))
+user_month = int(input("Enter a month (1-12):  "))
 
 while user_month not in range(1, 12):
     user_month = int(input("Invalid month. Please enter a month (1-12): "))
