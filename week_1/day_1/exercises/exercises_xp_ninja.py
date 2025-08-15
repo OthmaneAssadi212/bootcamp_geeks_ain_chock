@@ -1,47 +1,75 @@
 # ------ Exercise 1
-# p = True
-# q = False
-# m = 5
-# n = 10
-# print("p is", p)
-# print("q is", q)
-# print("m:", m)
-# print("n:", n)
+
+# 3 <= 3 < 9 => True
+# 3 == 3 == 3 => True
+# bool(0) => False
+# bool(4==4) == bool("4" == "4") => True
+# true
+# false 
+# 5
+# 10
 
 # ------ Exercise 2
-mot_saisi = input("Entrez un mot : ")
-ancien = mot_saisi
-precedent = ""
-while "a" not in ancien.lower() and len(ancien) > len(precedent):
-    print("félicitations", end=" ")
-    precedent = ancien
-    ancien = input("Entrez un mot : ")
-    print()
+
+word = ""
+user_word = input("Enter a word: ")
+
+while "A" not in user_word and len(user_word) > len(word):
+    print("Congratulations!")
+    word = user_word
+    user_word = input("Enter a word: ")
 
 # ------ Exercise 3
-texte = ("La programmation est une compétence pratique et créative. "
-         "Avec un peu de logique et beaucoup d’entraînement, on peut résoudre "
-         "des problèmes réels et construire des applications utiles au quotidien. "
-         "Même les débutants progressent rapidement en écrivant du code chaque jour!")
 
-compteur_car = 0
-for ch in texte:
-    if ch in ' .,:;!?\'"’«»()-–—\n\t':
-        continue
-    compteur_car += 1
-print("Nombre de caractères :", compteur_car)
+word = ""
+user_word = input("Enter a word: ")
 
-import re
-phrases = [s for s in re.split(r"[.!?]+", texte) if s.strip() != ""]
-print("Nombre de phrases :", len(phrases))
+while "A" not in user_word and len(user_word) > len(word):
+    print("Congratulations!")
+    word = user_word
+    user_word = input("Enter a word: ")
 
-mots = texte.split()
-print("Nombre de mots :", len(mots))
+# Exercise 3:
 
-mots_nettoyes = []
-for w in mots:
-    w2 = w.strip('.,:;!?\'"’«»()-–—')
-    if w2:
-        mots_nettoyes.append(w2.lower())
-ensemble_mots = set(mots_nettoyes)
-print("Nombre de mots uniques :", len(ensemble_mots))
+pargraph = "Programming is like solving a puzzle. Each line of code is a small piece, and when they all come together, they create something meaningful. It requires patience, creativity, and logical thinking. Just like any skill, the more you practice, the better you become."
+pargraph_1 = pargraph
+
+print("Number of chararcters: ", len(pargraph))
+print("Number of sentences: ", pargraph.count("."))
+
+while "." in pargraph_1:
+    pargraph_1 = pargraph_1.replace(".","")
+
+while "," in pargraph_1:
+    pargraph_1 = pargraph_1.replace(",","")
+
+
+pargraph_1 = pargraph_1.split(" ")
+
+print("Number of words: ", len(pargraph_1))
+
+#bonus
+
+pargraph_1 = set(pargraph_1)
+
+print("non-whitespace characters: ",len(pargraph_1))
+
+pargraph = pargraph.split(".")
+pargraph.pop()
+
+
+#bonus
+new_paragraph = [];
+
+for sentence in pargraph:
+    sentence = sentence.split(" ")
+    new_paragraph.append(sentence)
+
+
+
+i = 0
+for sentence in new_paragraph:
+    i += 1
+    avg = len(sentence) / len(pargraph)
+    print(f"avrage of words in sentnece {i}: {avg:0.2f}")
+

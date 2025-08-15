@@ -1,23 +1,24 @@
 # ------ Challenge 1
-number = int(input("Entrez un nombre : "))
-length = int(input("Entrez la longueur : "))
 
+number = int(input("Enter a number: "))
+length = int(input("Enter the lenght: "))
+multiple_number = 0
+multiple_list = []
 
-multiples = []
-for i in range(1, length + 1):
-    multiples.append(number * i)
+for i in range(1 , length + 1):
+    multiple_number += number
+    multiple_list.append(multiple_number)
 
-
-print("Liste des multiples :", multiples)
+print(multiple_list) 
 
 # ------ Challenge 2
-texte = input("Entrez une text : ")
 
+word = input("Enter a word: ")
 
-nouveau_texte = ""
-for i in range(len(texte)):
-    if i == 0 or texte[i] != texte[i - 1]:
-        nouveau_texte += texte[i]
+result = word[0] if word else ""
 
+for i in range(1 , len(word)):
+     if word[i] != result[-1]:
+          result += word[i]
 
-print("text sans doublons consécutifs :", nouveau_texte)
+print(result)
